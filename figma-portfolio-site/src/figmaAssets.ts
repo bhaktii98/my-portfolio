@@ -48,6 +48,4 @@ export const assets = {
     "https://www.figma.com/api/mcp/asset/2a75548c-e476-4010-9acc-c42c2ed5446f",
   hireFullscreen:
     "https://www.figma.com/api/mcp/asset/3c7656ba-bde5-48f6-9666-9d96378351ef",
-  sketchMain:
-    "https://www.figma.com/api/mcp/asset/96c97382-e8da-4f66-ba35-c79bce73db73",
 } as const;

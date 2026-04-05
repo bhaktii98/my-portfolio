@@ -17,7 +17,7 @@ export function Navigation() {
           </Link>
           <div className="nav-figma__links">
             <Link to="/about">About</Link>
-            <Link to="/playground">Playground</Link>
+            <Link to="/projects">Projects</Link>
             <a href={RESUME} target="_blank" rel="noreferrer">
               Resume
             </a>
@@ -36,7 +36,7 @@ export function Navigation() {
           <Link to="/">Bhakti Dangri</Link>
         )}
         <Link to="/about">About</Link>
-        <Link to="/playground">Playground</Link>
+        <Link to="/projects">Projects</Link>
         <a href={RESUME} target="_blank" rel="noreferrer">
           Resume
         </a>

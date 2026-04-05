@@ -1,16 +1,17 @@
-import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import type { Experience } from "../data/experiences";
+import {
+  CaseStudyProject,
+  type CaseStudyRow,
+  type CaseStudyTaped,
+} from "./caseStudy/CaseStudyBlocks";
 
 const GISUL_LANDING = "/gisul/gisul.png";
 const GISUL_PAYMENT = "/gisul/payment_course.png";
 const AAPTOR_LOGIN = "/gisul/aaptor.png";
 const AAPTOR_FEATURES = "/gisul/competencies.png";
 
-type Row = { label: string; content: ReactNode };
-type Taped = { title: string; body: string; foot: string };
-
-const GISUL_ROWS: Row[] = [
+const GISUL_ROWS: CaseStudyRow[] = [
   {
     label: "Objective",
     content:
@@ -42,7 +43,7 @@ const GISUL_ROWS: Row[] = [
   },
 ];
 
-const GISUL_TAPED: Taped[] = [
+const GISUL_TAPED: CaseStudyTaped[] = [
   {
     title: "Frontend",
     body: "Next.js UI for the pages users hit before and during enrollment.",
@@ -60,7 +61,7 @@ const GISUL_TAPED: Taped[] = [
   },
 ];
 
-const AAPTOR_ROWS: Row[] = [
+const AAPTOR_ROWS: CaseStudyRow[] = [
   {
     label: "Objective",
     content:
@@ -96,7 +97,7 @@ const AAPTOR_ROWS: Row[] = [
   },
 ];
 
-const AAPTOR_TAPED: Taped[] = [
+const AAPTOR_TAPED: CaseStudyTaped[] = [
   {
     title: "Services",
     body: "FastAPI plus Node/Express split so teams can grow pieces without one giant monolith.",
@@ -113,147 +114,6 @@ const AAPTOR_TAPED: Taped[] = [
     foot: "AAptor",
   },
 ];
-
-function LaptopFrame({
-  url,
-  src,
-  alt,
-}: {
-  url: string;
-  src: string;
-  alt: string;
-}) {
-  return (
-    <div className="case-study__lap">
-      <div className="case-study__lap-lid">
-        <div className="case-study__lap-bezel">
-          <div className="case-study__lap-camera" aria-hidden>
-            <span className="case-study__lap-camera-dot" />
-          </div>
-          <div className="case-study__lap-browser">
-            <div className="case-study__lap-browser-bar">
-              <span className="case-study__lap-traffic">
-                <span className="case-study__lap-traffic-dot case-study__lap-traffic-dot--r" />
-                <span className="case-study__lap-traffic-dot case-study__lap-traffic-dot--y" />
-                <span className="case-study__lap-traffic-dot case-study__lap-traffic-dot--g" />
-              </span>
-              <span className="case-study__lap-browser-url" title={url}>
-                {url}
-              </span>
-            </div>
-            <div className="case-study__lap-screen">
-              <img src={src} alt={alt} loading="lazy" />
-              <div className="case-study__lap-shine" aria-hidden />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="case-study__lap-hinge" aria-hidden />
-      <div className="case-study__lap-base" aria-hidden />
-    </div>
-  );
-}
-
-function CaseStudyProject({
-  num,
-  title,
-  subtitle,
-  rows,
-  primaryImg,
-  primaryAlt,
-  primaryLabel,
-  primaryUrl,
-  secondaryImg,
-  secondaryAlt,
-  secondaryLabel,
-  secondaryUrl,
-  taped,
-  tapedHeadingId,
-  tapedTitle,
-  stack,
-}: {
-  num: string;
-  title: string;
-  subtitle: string;
-  rows: Row[];
-  primaryImg: string;
-  primaryAlt: string;
-  primaryLabel: string;
-  primaryUrl: string;
-  secondaryImg: string;
-  secondaryAlt: string;
-  secondaryLabel: string;
-  secondaryUrl: string;
-  taped: Taped[];
-  tapedHeadingId: string;
-  tapedTitle: string;
-  stack: string[];
-}) {
-  return (
-    <div className="case-study__project">
-      <div className="case-study__project-panel">
-        <header className="case-study__hero case-study__hero--sub">
-          <h2 className="case-study__title">
-            <span className="case-study__title-num">{num}</span> {title}
-          </h2>
-          <p className="case-study__subtitle">{subtitle}</p>
-        </header>
-
-        <div className="case-study__rows">
-          {rows.map((row) => (
-            <div key={row.label} className="case-study__row">
-              <div className="case-study__row-label">{row.label}</div>
-              <div className="case-study__row-body">{row.content}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="case-study__gallery" aria-label={`${title} screenshots`}>
-          <figure className="case-study__shot">
-            <figcaption className="case-study__shot-cap">{primaryLabel}</figcaption>
-            <LaptopFrame
-              url={primaryUrl}
-              src={primaryImg}
-              alt={primaryAlt}
-            />
-          </figure>
-          <figure className="case-study__shot">
-            <figcaption className="case-study__shot-cap">{secondaryLabel}</figcaption>
-            <LaptopFrame
-              url={secondaryUrl}
-              src={secondaryImg}
-              alt={secondaryAlt}
-            />
-          </figure>
-        </div>
-
-        <section className="case-study__components" aria-labelledby={tapedHeadingId}>
-          <h3 id={tapedHeadingId} className="case-study__components-title">
-            {tapedTitle}
-          </h3>
-          <div className="case-study__taped-grid">
-            {taped.map((c) => (
-              <div key={c.title} className="case-study-card">
-                <p className="case-study-card__title">{c.title}</p>
-                <p className="case-study-card__body">{c.body}</p>
-                <p className="case-study-card__foot">{c.foot}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="case-study__stack" aria-label={`${title} stack`}>
-          <h3 className="case-study__stack-heading">Stack</h3>
-          <ul className="case-study__stack-list">
-            {stack.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
-    </div>
-  );
-}
 
 type Props = {
   exp: Experience;

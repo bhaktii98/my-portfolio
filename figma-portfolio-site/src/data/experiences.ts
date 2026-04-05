@@ -20,6 +20,8 @@ export type Experience = {
     bullets: string[];
     stack: string[];
     tools?: string[];
+    /** Optional closing row for case-study style pages */
+    impact?: string;
   };
 };
 
@@ -67,17 +69,18 @@ export const experiences: Experience[] = [
     company: "Atoconn System Labs Pvt. Ltd, Mumbai",
     period: "Apr 2025 – Dec 2025",
     overview:
-      "Lead developer for US-based clients across the full lifecycle — from UX research and Figma through build and store release. Delivered WowInventory and WowCare; grew WowCare engagement ~35% for 100+ users.",
+      "Lead Developer with US clients: scalable web & mobile; UX research → Figma → PRD → deploy; WowCare +35% engagement, 100+ users; WowInventory + WowCare; payments, APIs, Play & App Store.",
     ...cardVisual,
     offset: "right",
     detail: {
       intro:
-        "Owned product delivery end-to-end for client apps: design collaboration, implementation, and deployment.",
+        "Lead Developer collaborating with US-based clients on scalable web and mobile products—full lifecycle ownership from research and design through production releases.",
       bullets: [
-        "Led development for cross-platform products including WowInventory and WowCare.",
-        "Improved WowCare engagement by ~35% across 100+ active users.",
-        "Integrated payment flows and shipped to Google Play and the App Store.",
-        "Partnered on UX research, Figma specs, and iterative delivery with stakeholders.",
+        "Worked as Lead Developer, collaborating with US-based clients to build scalable web and mobile applications.",
+        "Led complete product lifecycle from UX research, Figma design, and PRD creation through development and deployment.",
+        "Built and deployed WowInventory and WowCare with a focus on performance, scalability, and seamless UI/UX.",
+        "Increased WowCare user engagement by 35%, reaching 100+ users through feature optimization and stronger UX.",
+        "Integrated payment gateways, optimized APIs, and shipped successfully to the Play Store and App Store.",
       ],
       stack: ["Flutter", "Java", "Next.js", "MERN"],
       tools: ["GitHub", "Docker", "Jira", "ClickUp", "Figma"],
@@ -103,6 +106,8 @@ export const experiences: Experience[] = [
       ],
       stack: ["React", "Next.js", "Django", "Python"],
       tools: ["GitHub"],
+      impact:
+        "Shipped an end-to-end intern deliverable: usable fleet UI plus Django-backed APIs, reviewed and integrated through GitHub so the work stayed traceable and shippable.",
     },
   },
   {
@@ -125,6 +130,8 @@ export const experiences: Experience[] = [
       ],
       stack: ["React Native", "Flutter"],
       tools: ["Figma", "Bitbucket"],
+      impact:
+        "Contributed to apps in active use by 50+ users—stable release rhythm, Figma-accurate UI, and Bitbucket-based collaboration with the team.",
     },
   },
 ];

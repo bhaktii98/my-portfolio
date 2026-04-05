@@ -1,5 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { AtoconnCaseStudy } from "../components/AtoconnCaseStudy";
 import { GisulCaseStudy } from "../components/GisulCaseStudy";
+import { InternshipCaseStudy } from "../components/InternshipCaseStudy";
 import { getExperienceBySlug } from "../data/experiences";
 
 export function ExperiencePage() {
@@ -12,6 +14,14 @@ export function ExperiencePage() {
 
   if (exp.slug === "gisul") {
     return <GisulCaseStudy exp={exp} />;
+  }
+
+  if (exp.slug === "atoconn") {
+    return <AtoconnCaseStudy exp={exp} />;
+  }
+
+  if (exp.slug === "hcl" || exp.slug === "orange-essence") {
+    return <InternshipCaseStudy exp={exp} />;
   }
 
   const { detail } = exp;
