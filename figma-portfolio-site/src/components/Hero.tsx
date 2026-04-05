@@ -48,35 +48,6 @@ export function Hero() {
             />
           </div>
         </div>
-        <div className="hero__socials">
-          <a
-            className="hero__social"
-            href="https://www.linkedin.com/in/bhakti-dangri-40a1a7250/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <img src={assets.iconLinkedIn} alt="" width={18} height={18} />
-          </a>
-          <a
-            className="hero__social"
-            href="https://www.behance.net/bhaktidangri"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Behance"
-          >
-            <img src={assets.iconBehance} alt="" width={18} height={18} />
-          </a>
-          <a
-            className="hero__social"
-            href="https://www.instagram.com/bhaktidangri/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-          >
-            <img src={assets.iconInstagram} alt="" width={18} height={18} />
-          </a>
-        </div>
       </div>
     </section>
   );

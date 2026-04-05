@@ -11,12 +11,6 @@ export const assets = {
   heroIllustration:
     "https://www.figma.com/api/mcp/asset/3a36e58a-a4cd-4575-856f-2c4909e4eee3",
   heroGlow: "https://www.figma.com/api/mcp/asset/7abd4f7a-7e52-4c28-a50d-c48cde2c919d",
-  iconLinkedIn:
-    "https://www.figma.com/api/mcp/asset/683195e1-9222-4ebc-a4ec-3a5383133d10",
-  iconBehance:
-    "https://www.figma.com/api/mcp/asset/5a1336ca-52da-4384-8ac3-d1cfc889621d",
-  iconInstagram:
-    "https://www.figma.com/api/mcp/asset/f5712c1e-e879-4a8d-9b08-a194dfd79398",
   project1a:
     "https://www.figma.com/api/mcp/asset/79b099c1-4c8b-46e7-a89c-4ac18f7be03a",
   project1b:

@@ -297,35 +297,6 @@ video {
   height: auto;
 }
 
-.hero__socials {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.hero__social {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(
-    circle at 50% 50%,
-    #111 0%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
-  transition: transform 0.2s;
-}
-
-.hero__social:hover {
-  transform: scale(1.08);
-}
-
-.hero__social img {
-  width: 18px;
-  height: 18px;
-}
-
 /* ----- Section titles ----- */
 .section-head {
   text-align: center;
