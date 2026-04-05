@@ -1,3 +1,4 @@
+import { FeaturedProjects } from "../components/FeaturedProjects";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { HireMe } from "../components/HireMe";
@@ -11,6 +12,7 @@ export function HomePage() {
     <>
       <Hero />
       <MainPlots />
+      <FeaturedProjects />
       <UxSlides />
       <HireMe />
       <Sketches />

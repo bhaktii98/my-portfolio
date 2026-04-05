@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { GisulCaseStudy } from "../components/GisulCaseStudy";
 import { getExperienceBySlug } from "../data/experiences";
 
 export function ExperiencePage() {
@@ -7,6 +8,10 @@ export function ExperiencePage() {
 
   if (!exp) {
     return <Navigate to="/" replace />;
+  }
+
+  if (exp.slug === "gisul") {
+    return <GisulCaseStudy exp={exp} />;
   }
 
   const { detail } = exp;

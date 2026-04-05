@@ -61,11 +61,16 @@ export function MainPlots() {
                 }
               >
                 <Link
-                  className="plots__card"
+                  className="plots__card plots__card--work-banner"
                   to={`/experience/${exp.slug}`}
                 >
                   <img src={exp.imageA} alt="" />
-                  <img src={exp.imageB} alt="" />
+                  <div className="plots__hover-sheet" aria-hidden>
+                    <p className="plots__hover-sheet__text">{exp.overview}</p>
+                    <p className="plots__hover-sheet__at">
+                      @ {exp.company}
+                    </p>
+                  </div>
                   <span className="sr-only">
                     {exp.heading} at {exp.company} — open details
                   </span>
