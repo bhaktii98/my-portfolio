@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 
 /**
  * Two-column vertical galleries with mirrored scroll: scrolling one column
- * moves the other in the opposite direction (Framer-style UX strip).
+ * moves the other in the opposite direction (mirrored vertical scroll strip).
  */
 export function UxSlides() {
   const leftRef = useRef<HTMLDivElement>(null);

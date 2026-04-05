@@ -1,6 +1,11 @@
 import { AnantaraProjectCard } from "../components/AnantaraProject";
+import { BharatYatraProjectCard } from "../components/BharatYatraProject";
+import { JalSanchayProjectCard } from "../components/JalSanchayProject";
 
 export const ANANTARA_PDF_HREF = "/anantara/Anantara.pdf";
+export const BHARATYATRA_PDF_HREF = "/bharatyatra/BharatYatra.pdf";
+export const JALSANCHAY_PDF_HREF =
+  "/jalsanchay/" + encodeURIComponent("Jal sanchay (1).pdf");
 
 export function ProjectsPage() {
   return (
@@ -25,21 +30,27 @@ export function ProjectsPage() {
         >
           <AnantaraProjectCard />
         </a>
-      </section>
 
-      <footer className="projects-index__footer">
-        <p>
-          More experiments on{" "}
-          <a
-            href="https://bhaktidangri.framer.website/playground"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Framer ↗
-          </a>
-          .
-        </p>
-      </footer>
+        <a
+          href={BHARATYATRA_PDF_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fp-project-card"
+          aria-label="BharatYatra — open PDF case study"
+        >
+          <BharatYatraProjectCard />
+        </a>
+
+        <a
+          href={JALSANCHAY_PDF_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fp-project-card"
+          aria-label="Jal Sanchay — open PDF case study"
+        >
+          <JalSanchayProjectCard />
+        </a>
+      </section>
     </>
   );
 }

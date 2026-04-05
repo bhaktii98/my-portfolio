@@ -279,7 +279,7 @@ export function AboutPage() {
             </a>
           </div>
           <p className="vf-footer__aside">
-            Designed with <em>love</em> in Framer
+            Designed with <em>love</em>
           </p>
         </div>
       </footer>
