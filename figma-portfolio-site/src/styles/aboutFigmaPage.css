@@ -6,7 +6,11 @@
   --vf-muted: #9c9c9d;
   --vf-card: #0f1013;
   --vf-max: 1920px;
+  position: relative;
+  z-index: 0;
   padding-bottom: 4rem;
+  color: var(--vf-text);
+  background: transparent;
 }
 
 .vf-container {
@@ -15,47 +19,6 @@
   margin: 0 auto;
   padding-left: clamp(1.25rem, 4vw, 3.125rem);
   padding-right: clamp(1.25rem, 4vw, 3.125rem);
-}
-
-/* ----- Flat nav (About only) ----- */
-.nav-figma {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem clamp(1.25rem, 4vw, 3.125rem) 0;
-  max-width: var(--vf-max);
-  margin: 0 auto;
-}
-
-.nav-figma__brand {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.nav-figma__brand:hover {
-  color: var(--vf-accent);
-}
-
-.nav-figma__links {
-  display: flex;
-  align-items: center;
-  gap: clamp(1rem, 2.5vw, 2rem);
-}
-
-.nav-figma__links a {
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.nav-figma__links a:hover {
-  color: var(--vf-accent);
 }
 
 /* ----- Hero ----- */
@@ -277,6 +240,18 @@
   object-fit: cover;
 }
 
+.vf-job__logo-initials {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--vf-accent);
+  background: rgba(165, 135, 255, 0.14);
+}
+
 .vf-job__mid {
   flex: 1;
   min-width: 200px;
@@ -351,40 +326,61 @@
   color: var(--vf-muted);
 }
 
-.vf-skills-mission {
-  text-align: center;
-  margin: 2.5rem 0 0.5rem;
+.vf-skills-head--compact {
+  margin-top: clamp(1.75rem, 4vw, 3rem);
+  margin-bottom: 0;
+  padding-top: 0.5rem;
 }
 
-.vf-skills-mission p {
-  margin: 0;
-  font-size: 15px;
+.vf-skills-head--compact h2 {
+  font-size: clamp(1.65rem, 3.8vw, 2.35rem);
+}
+
+.vf-skills-head--compact p {
+  margin-top: 0.45rem;
+}
+
+/* Dotted panel: mission + physics stack (no 100vw breakout — avoids clip/scroll bugs) */
+.vf-skills-physics-panel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.65rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  padding: 0.65rem clamp(1rem, 3vw, 2.5rem) 0.85rem;
+  box-sizing: border-box;
+  background-color: #000;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+  background-position: 0 0;
+  overflow-x: hidden;
+}
+
+.vf-skills-mission-on-dots {
+  margin: 0 0 0.35rem;
+  padding: 0 5rem 0 1rem;
+  text-align: center;
+  font-size: clamp(13px, 2.4vw, 15px);
+  line-height: 1.4;
   color: var(--vf-muted);
 }
 
-.vf-skills-drag-hint {
-  margin: 1rem auto 0;
-  max-width: 36rem;
-  padding: 0 1rem;
-  text-align: center;
-  font-size: 13px;
-  color: var(--vf-muted);
-  line-height: 1.45;
-}
-
-.vf-skills-toolbar {
-  display: flex;
-  justify-content: center;
-  margin: 0.75rem 0 0;
+.vf-skills-mission-on-dots strong {
+  color: var(--vf-text);
+  font-weight: 600;
 }
 
 .vf-skills-reset {
-  padding: 0.4rem 1rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
   border: 1px solid rgba(165, 135, 255, 0.45);
-  background: rgba(165, 135, 255, 0.1);
+  background: rgba(165, 135, 255, 0.12);
   color: var(--vf-accent);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -392,7 +388,14 @@
 }
 
 .vf-skills-reset:hover {
-  background: rgba(165, 135, 255, 0.18);
+  background: rgba(165, 135, 255, 0.22);
+}
+
+.vf-skills-reset--floating {
+  position: absolute;
+  top: 0.55rem;
+  right: clamp(0.75rem, 3vw, 2.25rem);
+  z-index: 30;
 }
 
 .vf-skills-stage {
@@ -408,6 +411,33 @@
     border-color 0.35s ease,
     padding 0.5s ease,
     z-index 0s step-end;
+}
+
+/* Physics playfield: full width inside dotted panel, fits ~one screen with header */
+.vf-skills-stage--physics {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0.2rem 0 0.35rem;
+  height: clamp(260px, 38vh, 440px);
+  min-height: 240px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  /* Keep physics chips from expanding document scroll height */
+  overflow: hidden;
+}
+
+.vf-skills-stage--physics .vf-skill-pill--physics {
+  padding: 0.55rem 1.25rem;
+  font-size: clamp(13px, 1.65vw, 17px);
+  border-width: 1px;
+}
+
+@media (min-width: 900px) {
+  .vf-skills-stage--physics {
+    height: clamp(300px, 40vh, 480px);
+  }
 }
 
 .vf-skill-pill {
@@ -931,6 +961,10 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  padding: 6px;
+  border-radius: 18px;
+  background: rgba(10, 10, 14, 0.85);
+  box-sizing: border-box;
 }
 
 .vf-orbit__sat {
@@ -960,7 +994,10 @@
 .vf-orbit__sat-inner img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 6px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 14, 0.9);
 }
 
 .vf-orbit__sat--a .vf-orbit__sat-inner {
@@ -1096,6 +1133,36 @@
   opacity: 0.92;
 }
 
+.vf-footer__chat-sub {
+  margin: 1.25rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.75rem;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.vf-footer__chat-sub a {
+  color: #fafafa;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.vf-footer__chat-sub a:hover {
+  opacity: 0.9;
+}
+
+.vf-footer__chat-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
 .vf-footer__bar {
   background: var(--vf-accent);
   padding: 2.5rem clamp(1.5rem, 4vw, 2.5rem);
@@ -1145,19 +1212,4 @@
 
 .vf-footer__aside em {
   font-style: italic;
-}
-
-.vf-home-link {
-  display: block;
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--vf-accent);
-}
-
-.vf-home-link:hover {
-  text-decoration: underline;
 }

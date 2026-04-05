@@ -140,3 +140,26 @@ export function getExperienceBySlug(slug: string | undefined) {
   if (!slug) return undefined;
   return experiences.find((e) => e.slug === slug);
 }
+
+/** About page “Where I’ve Been” — same order as `experiences` (newest first). */
+function formatAboutPeriod(period: string): string {
+  return period.replace(/\s*[\u2013\u2014-]\s*/g, " — ").replace(/\s+/g, " ").trim();
+}
+
+function aboutWorkType(slug: string): string {
+  return slug === "hcl" || slug === "orange-essence" ? "Internship" : "Full time";
+}
+
+function companyInitials(company: string): string {
+  const word = company.split(/[\s,.]+/).find(Boolean) ?? company;
+  return word.slice(0, 2).toUpperCase();
+}
+
+export const aboutWorkEntries = experiences.map((e) => ({
+  key: e.id,
+  role: e.heading,
+  company: e.company,
+  type: aboutWorkType(e.slug),
+  period: formatAboutPeriod(e.period),
+  initials: companyInitials(e.company),
+}));

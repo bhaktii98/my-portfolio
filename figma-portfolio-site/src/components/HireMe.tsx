@@ -12,51 +12,57 @@ const VALUE_PROPS = [
   {
     title: (
       <>
-        I move at <em>startup speed</em>!
+        I take it from <em>PRD to production</em>
       </>
     ),
     body: (
       <>
-        Prioritize what matters and ship <strong>MVPs</strong> fast, without
-        compromising on <strong>clarity</strong>, <strong>usability</strong>,
-        or <strong>quality</strong>.
+        I write <strong>PRDs</strong>, design in <strong>Figma</strong>, and
+        ship <strong>frontend and backend</strong>, so the product in the
+        browser matches the story we aligned on, without trading{" "}
+        <strong>speed</strong> for <strong>quality</strong>.
       </>
     ),
   },
   {
     title: (
       <>
-        I design for outcomes, not <em>Dribbble</em>
+        I design for <em>outcomes</em>, not portfolios
       </>
     ),
     body: (
       <>
-        My focus is on reducing <strong>friction</strong>, boosting
-        conversions, and creating <strong>experiences</strong> that make users
-        stay, not just pretty <strong>pixels</strong>.
-      </>
-    ),
-  },
-  {
-    title: <>I ask, learn, and grow fast</>,
-    body: (
-      <>
-        Actively seek feedback, talk to <strong>users</strong> and{" "}
-        <strong>stakeholders</strong> and quickly fill any knowledge{" "}
-        <strong>gaps</strong> to move forward with confidence.
+        I optimize for <strong>clarity</strong>, smoother <strong>flows</strong>
+        , and <strong>experiences</strong> that keep people, with systems
+        that behave well in production, not just in mockups.
       </>
     ),
   },
   {
     title: (
       <>
-        I adapt and get <em>things done</em>
+        I ask, listen, and <em>close gaps</em> fast
       </>
     ),
     body: (
       <>
-        Context-switch with product and eng, align on constraints early, and
-        keep momentum through <strong>delivery</strong> — not just decks.
+        I talk to <strong>users</strong> and <strong>stakeholders</strong>,
+        pair with <strong>engineering</strong> early, and fill{" "}
+        <strong>knowledge gaps</strong> quickly so we commit with confidence.
+      </>
+    ),
+  },
+  {
+    title: (
+      <>
+        I work across <em>design and code</em>
+      </>
+    ),
+    body: (
+      <>
+        One rhythm across <strong>product</strong>, <strong>UX</strong>, and{" "}
+        <strong>implementation</strong>, with constraints on the table early
+        and momentum through <strong>delivery</strong>, not just decks.
       </>
     ),
   },
@@ -71,7 +77,10 @@ export function HireMe() {
         <h2 id="hire-heading">
           Why <span className="italic">you should</span> Hire me!
         </h2>
-        <p>Just a little pitch from Big Bhakti energy</p>
+        <p>
+          Designer and full-stack: product, Figma, and shipped code in one
+          workflow.
+        </p>
       </div>
 
       <div className="hire__cards">

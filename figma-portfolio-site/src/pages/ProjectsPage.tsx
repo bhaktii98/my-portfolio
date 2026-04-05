@@ -1,6 +1,7 @@
 import { AnantaraProjectCard } from "../components/AnantaraProject";
 import { BharatYatraProjectCard } from "../components/BharatYatraProject";
 import { JalSanchayProjectCard } from "../components/JalSanchayProject";
+import { Footer } from "../components/Footer";
 
 export const ANANTARA_PDF_HREF = "/anantara/Anantara.pdf";
 export const BHARATYATRA_PDF_HREF = "/bharatyatra/BharatYatra.pdf";
@@ -9,8 +10,8 @@ export const JALSANCHAY_PDF_HREF =
 
 export function ProjectsPage() {
   return (
-    <>
-      <div className="section-head" id="projects">
+    <div className="stack-fade-sections">
+      <div className="section-head section-head--enter" id="projects">
         <h1 id="projects-page-heading">
           <span className="sans">Featured </span>
           <span className="serif">projects</span>
@@ -51,6 +52,8 @@ export function ProjectsPage() {
           <JalSanchayProjectCard />
         </a>
       </section>
-    </>
+
+      <Footer />
+    </div>
   );
 }

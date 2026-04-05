@@ -1,53 +1,71 @@
-import { Link } from "react-router-dom";
 import { SkillsPhysicsStage } from "../components/SkillsPhysicsStage";
-import {
-  PLAYLIST_HREF,
-  figmaAbout as A,
-} from "../figmaAboutPageAssets";
+import { aboutWorkEntries } from "../data/experiences";
+import { figmaAbout as A } from "../figmaAboutPageAssets";
 import "../styles/aboutFigmaPage.css";
 
 const RESUME =
-  "https://drive.google.com/file/d/1Nv1QZcsyUaFVUVMmNG-yBwTQ-paiQSsq/view?usp=sharing";
+  "https://drive.google.com/file/d/1TJh1e67I5Tt9j9hlMxlzn_arK5mftd-u/view?usp=sharing";
+const CONTACT_EMAIL = "dangribhaktii@gmail.com";
+const LINKEDIN_HREF =
+  "https://www.linkedin.com/in/bhakti-dangri-40a1a7250/";
 
-const JOBS = [
-  {
-    logo: A.logoRupeezy,
-    role: "Product Designer",
-    company: "Rupeezy",
-    type: "Full time",
-    period: "Sept 2025 — Current",
-  },
-  {
-    logo: A.logoTestsigma,
-    role: "Product Designer",
-    company: "Testsigma",
-    type: "Full time",
-    period: "July 2024 — Sept 2025",
-  },
-  {
-    logo: A.logoCubexo,
-    role: "Product Design Intern",
-    company: "Cubexo",
-    type: "Full time",
-    period: "Jan — July 2024",
-  },
+const DAILY_DRIVER_HUB = {
+  src: "/icons/vscode.png",
+  label: "Visual Studio Code",
+} as const;
+
+const DAILY_DRIVER_ORBIT = [
+  { classSuffix: "a" as const, src: "/icons/clickup.png", label: "ClickUp" },
+  { classSuffix: "b" as const, src: "/icons/docker.png", label: "Docker" },
+  { classSuffix: "c" as const, src: "/icons/figma.png", label: "Figma" },
+  { classSuffix: "d" as const, src: "/icons/jira.png", label: "Jira" },
 ] as const;
 
-/** Labels match Figma export (including spelling where captured). */
 const SKILLS = [
+  /* Design & product */
   "UX Design",
   "Illustrations",
-  "Concept developement",
+  "Concept development",
   "UX Audit",
   "Visual Design",
   "Rapid prototyping",
   "Persona mapping",
-] as const;
-
-const VINYL = [
-  { disc: A.vinylDisc1, cover: A.playlistCover1, label: "indie" },
-  { disc: A.vinylDisc2, cover: A.playlistCover2, label: "Workers" },
-  { disc: A.vinylDisc3, cover: A.playlistCover3, label: "Moodboard" },
+  /* Languages */
+  "Python",
+  "Java",
+  "Dart",
+  "SQL",
+  "HTML/CSS",
+  "C++",
+  "TypeScript",
+  "Kotlin",
+  /* Frameworks */
+  "Flutter",
+  "React",
+  "React Native",
+  "Next.js",
+  "Node.js",
+  "Express.js",
+  "FastAPI",
+  /* AI / ML */
+  "LLM",
+  "RAG",
+  "Generative AI",
+  "Machine Learning",
+  /* Databases */
+  "MongoDB",
+  "MySQL",
+  "PostgreSQL",
+  "Firebase",
+  /* Tools */
+  "Git",
+  "GitHub",
+  "Docker",
+  "Jira",
+  "ClickUp",
+  "Figma",
+  "Power BI",
+  "Tableau",
 ] as const;
 
 function HeroQuote({ className }: { className?: string }) {
@@ -72,11 +90,11 @@ function HeroQuote({ className }: { className?: string }) {
 
 export function AboutPage() {
   return (
-    <article className="vf-page">
+    <article className="vf-page stack-fade-sections">
       <p className="vf-kicker">Happy to see you here :)</p>
       <p className="vf-page__tagline">
-        Need a developer? I&apos;ll build it. Need a designer? I&apos;ve got
-        that too.
+        Designer &amp; full-stack developer — from PRDs and Figma to frontend,
+        backend, and shipped product.
       </p>
 
       <div className="vf-hero-row">
@@ -96,22 +114,25 @@ export function AboutPage() {
 
       <div className="vf-intro vf-container">
         <p>
-          Hi, I&apos;m Bhakti, a developer and designer based in Bangalore. I care
-          about creating designs that feel clear, thoughtful, and genuinely
-          helpful. I&apos;ve worked on B2B SaaS product and AI platforms, most
-          recently on <span className="vf-accent-inline">Atto</span>, an AI
-          testing agent at Testsigma.
+          Hi, I&apos;m Bhakti, a designer and full-stack developer based in
+          Bangalore. I care about work that feels clear, thoughtful, and
+          genuinely useful. I&apos;ve owned products end to end: writing PRDs,
+          designing in Figma, and building what ships frontend and backend across
+          B2B and B2C SaaS. I&apos;m at{" "}
+          <span className="vf-accent-inline">GISUL</span> in Bengaluru now;
+          before that I led full-stack delivery and handled product lifecycle at{" "}
+          <span className="vf-accent-inline">Atoconn</span> in Mumbai.
         </p>
         <p>
-          Coming from a computer science background, I enjoy building prototypes
-          that feel close to real products — it helps me understand not just how
-          something should look, but how it should work and feel.
+          My computer science background keeps me close to how things actually
+          work. I like prototypes and production code that feel like real
+          products, so I stay honest about both the interface and what&apos;s
+          happening under the hood.
         </p>
         <p>
-          When I&apos;m not designing, I&apos;m probably writing, dancing around
-          to music, trying new recipes, or planning my next short trip. I love
-          asking questions, noticing the small stuff, and building products that
-          make people think,{" "}
+          When I&apos;m not building, I&apos;m usually writing, dancing to music,
+          trying new recipes, or planning my next short trip. I love good
+          questions, small details, and products that make people think,{" "}
           <span className="vf-accent-inline">&quot;this just works.&quot;</span>
         </p>
       </div>
@@ -144,10 +165,10 @@ export function AboutPage() {
           Where I&apos;ve <em>Been</em>
         </h2>
         <div className="vf-job-list">
-          {JOBS.map((j) => (
-            <article key={j.company + j.period} className="vf-job">
-              <div className="vf-job__logo">
-                <img src={j.logo} alt="" width={48} height={48} />
+          {aboutWorkEntries.map((j) => (
+            <article key={j.key} className="vf-job">
+              <div className="vf-job__logo" aria-hidden>
+                <span className="vf-job__logo-initials">{j.initials}</span>
               </div>
               <div className="vf-job__mid">
                 <div>
@@ -165,52 +186,16 @@ export function AboutPage() {
         </div>
       </section>
 
-      <header className="vf-skills-head vf-container">
+      <header className="vf-skills-head vf-skills-head--compact vf-container">
         <h2>
           Stuff I do really <em>well</em>
         </h2>
-        <p>Skills that help me design for people, not personas.</p>
-      </header>
-
-      <div className="vf-skills-mission vf-container">
         <p>
-          <strong style={{ color: "var(--vf-text)" }}>Your mission:</strong>{" "}
-          stack &apos;em all without tipping over.
+          Design and craft, plus languages, frameworks, and tools I ship with.
         </p>
-      </div>
+      </header>
 
       <SkillsPhysicsStage skills={SKILLS} />
-
-      <header className="vf-playlist-head">
-        <h2>
-          Now Playing <em>&quot;My Life in Tracks&quot;</em>
-        </h2>
-        <p className="vf-pl-sub">
-          Music fuels my design flow, mood boards, and midnight brainstorming.
-        </p>
-      </header>
-
-      <div className="vf-playlist-grid">
-        {VINYL.map((v) => (
-          <a
-            key={v.label}
-            className="vf-vinyl"
-            href={PLAYLIST_HREF}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="vf-vinyl__stage">
-              <div className="vf-vinyl__disc" aria-hidden>
-                <img src={v.disc} alt="" width={230} height={230} />
-              </div>
-              <div className="vf-vinyl__cover">
-                <img src={v.cover} alt="" width={188} height={188} />
-              </div>
-            </div>
-            <span className="vf-vinyl__label">{v.label}</span>
-          </a>
-        ))}
-      </div>
 
       <section className="vf-orbit-section" aria-labelledby="vf-drivers">
         <h2 id="vf-drivers">
@@ -223,28 +208,23 @@ export function AboutPage() {
           <div className="vf-orbit__ring vf-orbit__ring--m" aria-hidden />
           <div className="vf-orbit__ring vf-orbit__ring--i" aria-hidden />
           <div className="vf-orbit__hub">
-            <img src={A.orbitCenter} alt="" width={85} height={86} />
+            <img
+              src={DAILY_DRIVER_HUB.src}
+              alt={DAILY_DRIVER_HUB.label}
+              width={85}
+              height={86}
+            />
           </div>
-          <div className="vf-orbit__sat vf-orbit__sat--a" aria-hidden>
-            <div className="vf-orbit__sat-inner">
-              <img src={A.orbitSpline} alt="" width={56} height={56} />
+          {DAILY_DRIVER_ORBIT.map((t) => (
+            <div
+              key={t.classSuffix}
+              className={`vf-orbit__sat vf-orbit__sat--${t.classSuffix}`}
+            >
+              <div className="vf-orbit__sat-inner">
+                <img src={t.src} alt={t.label} width={56} height={56} />
+              </div>
             </div>
-          </div>
-          <div className="vf-orbit__sat vf-orbit__sat--b" aria-hidden>
-            <div className="vf-orbit__sat-inner">
-              <img src={A.orbitIllustrator} alt="" width={56} height={56} />
-            </div>
-          </div>
-          <div className="vf-orbit__sat vf-orbit__sat--c" aria-hidden>
-            <div className="vf-orbit__sat-inner">
-              <img src={A.orbitSpline} alt="" width={56} height={56} />
-            </div>
-          </div>
-          <div className="vf-orbit__sat vf-orbit__sat--d" aria-hidden>
-            <div className="vf-orbit__sat-inner">
-              <img src={A.orbitIllustrator} alt="" width={56} height={56} />
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -255,27 +235,30 @@ export function AboutPage() {
             <span className="sans">Let&apos;s </span>
             <span className="hi">Chat!</span>
           </h2>
-          <a className="vf-footer__btn" href="mailto:bhaktidangri@gmail.com">
+          <a
+            className="vf-footer__btn"
+            href={`mailto:${CONTACT_EMAIL}`}
+          >
             Say hello
           </a>
+          <p className="vf-footer__chat-sub">
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            <span className="vf-footer__chat-dot" aria-hidden />
+            <a href={LINKEDIN_HREF} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </p>
         </div>
         <div className="vf-footer__bar">
           <p className="vf-footer__copy">
-            © Bhakti Dangri <span className="dim">2025</span>
+            © Bhakti Dangri <span className="dim">2026</span>
           </p>
           <div className="vf-footer__links">
             <a href={RESUME} target="_blank" rel="noreferrer">
               Resume
             </a>
-            <a
-              href="https://www.behance.net/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Behance
-            </a>
-            <a href="https://medium.com/" target="_blank" rel="noreferrer">
-              Medium
+            <a href={LINKEDIN_HREF} target="_blank" rel="noreferrer">
+              LinkedIn
             </a>
           </div>
           <p className="vf-footer__aside">
@@ -283,10 +266,6 @@ export function AboutPage() {
           </p>
         </div>
       </footer>
-
-      <Link to="/" className="vf-home-link vf-container">
-        ← Back to home
-      </Link>
     </article>
   );
 }

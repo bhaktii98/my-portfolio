@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { assets } from "../figmaAssets";
 
 export function Hero() {
@@ -9,27 +10,31 @@ export function Hero() {
           <span className="accent">Bhakti Dangri</span>
         </h1>
         <p className="hero__tagline">
-          Need a developer? I&apos;ll build it. Need a designer? I&apos;ve got
-          that too.
+          Designer &amp; full-stack developer — from PRDs and Figma to frontend,
+          backend, and shipped product.
         </p>
-        <div className="hero__avatars" aria-hidden>
-          <div className="hero__avatar">
+        <div className="hero__avatars">
+          <Link
+            to="/about"
+            className="hero__avatar"
+            aria-label="About — open profile page"
+          >
             <img src={assets.avatar1} alt="" width={57} height={57} />
-          </div>
-          <div className="hero__avatar">
+          </Link>
+          <Link
+            to="/about"
+            className="hero__avatar"
+            aria-label="About — open profile page"
+          >
             <img src={assets.avatar2} alt="" width={57} height={57} />
-          </div>
-          <div className="hero__avatar">
+          </Link>
+          <Link
+            to="/about"
+            className="hero__avatar"
+            aria-label="About — open profile page"
+          >
             <img src={assets.avatar3} alt="" width={57} height={57} />
-          </div>
-        </div>
-        <div className="hero__featured">
-          <img
-            src={assets.featuredLogo}
-            alt="Featured on Testsigma"
-            width={140}
-            height={32}
-          />
+          </Link>
         </div>
       </div>
       <div className="hero__visual">
@@ -46,7 +51,7 @@ export function Hero() {
         <div className="hero__socials">
           <a
             className="hero__social"
-            href="https://www.linkedin.com/in/bhaktidangri/"
+            href="https://www.linkedin.com/in/bhakti-dangri-40a1a7250/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"

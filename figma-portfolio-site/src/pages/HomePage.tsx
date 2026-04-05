@@ -1,21 +1,17 @@
-import { FeaturedProjects } from "../components/FeaturedProjects";
+import { Achievements } from "../components/Achievements";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { HireMe } from "../components/HireMe";
-import { LifeAround } from "../components/LifeAround";
 import { MainPlots } from "../components/MainPlots";
-import { UxSlides } from "../components/UxSlides";
 
 export function HomePage() {
   return (
-    <>
+    <div className="stack-fade-sections">
       <Hero />
       <MainPlots />
-      <FeaturedProjects />
-      <UxSlides />
+      <Achievements />
       <HireMe />
-      <LifeAround />
       <Footer />
-    </>
+    </div>
   );
 }

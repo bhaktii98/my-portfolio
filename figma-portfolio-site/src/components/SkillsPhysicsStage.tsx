@@ -8,12 +8,12 @@ import {
   useState,
 } from "react";
 
-const STORAGE_KEY = "bhakti-about-skills-physics-v1";
+const STORAGE_KEY = "bhakti-about-skills-physics-v2";
 
 const INITIAL_FRAC: Record<string, { x: number; y: number }> = {
   "UX Design": { x: 0.42, y: 0.38 },
   Illustrations: { x: 0.2, y: 0.48 },
-  "Concept developement": { x: 0.12, y: 0.32 },
+  "Concept development": { x: 0.12, y: 0.32 },
   "UX Audit": { x: 0.55, y: 0.52 },
   "Visual Design": { x: 0.78, y: 0.45 },
   "Rapid prototyping": { x: 0.68, y: 0.28 },
@@ -23,12 +23,30 @@ const INITIAL_FRAC: Record<string, { x: number; y: number }> = {
 const INITIAL_ANGLE: Record<string, number> = {
   "UX Design": -0.42,
   Illustrations: 0.06,
-  "Concept developement": 0.38,
+  "Concept development": 0.38,
   "UX Audit": 0.02,
   "Visual Design": 0.48,
   "Rapid prototyping": Math.PI / 2 - 0.12,
   "Persona mapping": Math.PI - 0.08,
 };
+
+/** Stable pseudo-random start pose for skills without hand-tuned layout. */
+function seedLayout(
+  label: string,
+  index: number,
+): { frac: { x: number; y: number }; angle: number } {
+  let h = 2166136261;
+  const str = `${label}\0${index}`;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  const u = (shift: number) => (h >>> (shift % 25)) & 0xffff;
+  const x = 0.06 + (u(0) / 65535) * 0.88;
+  const y = 0.1 + (u(9) / 65535) * 0.48;
+  const angle = (u(18) / 65535) * 1.35 - 0.675;
+  return { frac: { x, y }, angle };
+}
 
 function usePrefersReducedMotion(): boolean {
   const [reduced, setReduced] = useState(false);
@@ -170,14 +188,15 @@ export function SkillsPhysicsStage({ skills }: Props) {
     const saved = loadSaved();
     const bodies: Matter.Body[] = [];
 
-    for (const s of skills) {
+    skills.forEach((s, skillIndex) => {
       const dim = measured[s];
-      if (!dim) continue;
+      if (!dim) return;
       const { w, h } = dim;
-      const frac = INITIAL_FRAC[s] ?? { x: 0.5, y: 0.45 };
+      const seeded = seedLayout(s, skillIndex);
+      const frac = INITIAL_FRAC[s] ?? seeded.frac;
       let x = frac.x * W;
       let y = frac.y * H * 0.55 + H * 0.18;
-      let angle = INITIAL_ANGLE[s] ?? 0;
+      let angle = INITIAL_ANGLE[s] ?? seeded.angle;
 
       const sv = saved?.[s];
       if (
@@ -208,7 +227,7 @@ export function SkillsPhysicsStage({ skills }: Props) {
       Matter.Body.setAngle(body, angle);
       bodies.push(body);
       bodiesRef.current.set(s, body);
-    }
+    });
 
     Matter.Composite.add(engine.world, [...bodies, ground, leftWall, rightWall]);
 
@@ -278,39 +297,43 @@ export function SkillsPhysicsStage({ skills }: Props) {
       window.location.reload();
       return;
     }
-    for (const s of skills) {
+    skills.forEach((s, skillIndex) => {
       const b = bodiesRef.current.get(s);
-      if (!b) continue;
-      const frac = INITIAL_FRAC[s] ?? { x: 0.5, y: 0.45 };
+      if (!b) return;
+      const seeded = seedLayout(s, skillIndex);
+      const frac = INITIAL_FRAC[s] ?? seeded.frac;
       const x = frac.x * W;
       const y = frac.y * H * 0.55 + H * 0.18;
-      const angle = INITIAL_ANGLE[s] ?? 0;
+      const angle = INITIAL_ANGLE[s] ?? seeded.angle;
       Matter.Body.setPosition(b, { x, y });
       Matter.Body.setAngle(b, angle);
       Matter.Body.setVelocity(b, { x: 0, y: 0 });
       Matter.Body.setAngularVelocity(b, 0);
       Matter.Sleeping.set(b, false);
-    }
+    });
   }, [skills]);
 
   return (
-    <>
-      <p className="vf-skills-drag-hint">
-        Drag the chips — they bump, tilt, and stack without overlapping.
+    <div className="vf-skills-physics-panel">
+      <p className="vf-skills-mission-on-dots">
+        <strong>Your mission:</strong> stack &apos;em all without tipping over.
       </p>
-      <div className="vf-skills-toolbar">
-        <button type="button" className="vf-skills-reset" onClick={resetPhysics}>
-          Reset scatter
-        </button>
-      </div>
+      <button
+        type="button"
+        className="vf-skills-reset vf-skills-reset--floating"
+        onClick={resetPhysics}
+      >
+        Reset
+      </button>
       <div
         ref={stageRef}
         className="vf-skills-stage vf-skills-stage--physics"
-        aria-label="Skills — physics chips, drag to move"
+        aria-label="Skills: physics chips, drag to move"
       >
         {skills.map((s, i) => {
-          const frac = INITIAL_FRAC[s] ?? { x: 0.5, y: 0.45 };
-          const angle = INITIAL_ANGLE[s] ?? 0;
+          const seeded = seedLayout(s, i);
+          const frac = INITIAL_FRAC[s] ?? seeded.frac;
+          const angle = INITIAL_ANGLE[s] ?? seeded.angle;
           const sv = savedStatic?.[s];
 
           if (reducedMotion) {
@@ -350,13 +373,13 @@ export function SkillsPhysicsStage({ skills }: Props) {
                 zIndex: draggingLabel === s ? 50 : 10 + i,
               }}
               tabIndex={-1}
-              aria-label={`${s} — draggable`}
+                aria-label={`${s}, draggable`}
             >
               {s}
             </span>
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

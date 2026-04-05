@@ -113,21 +113,21 @@ video {
   padding: 1.5rem var(--gutter) 0;
 }
 
-.nav-wrap--figma {
-  justify-content: stretch;
-  padding: 0;
-}
-
 .nav-pill {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: clamp(1rem, 3vw, 2rem);
-  padding: 9px 12px;
+  justify-content: center;
+  gap: clamp(0.75rem, 2.5vw, 1.75rem);
+  row-gap: 0.35rem;
+  padding: 10px clamp(14px, 2.5vw, 22px);
   border-radius: 16px;
   background: linear-gradient(180deg, var(--nav-pill-top) 0%, #000 100%);
   box-shadow: 0 0 0 1px rgba(161, 161, 161, 0.25);
   backdrop-filter: blur(2.5px);
+  max-width: calc(100vw - 2 * var(--gutter));
+  box-sizing: border-box;
 }
 
 .nav-pill a,
@@ -138,10 +138,15 @@ video {
   text-transform: uppercase;
   color: var(--white);
   padding: 8px 0;
+  text-decoration: none;
   transition: color 0.2s, opacity 0.2s;
 }
 
 .nav-pill a:hover {
+  color: var(--accent);
+}
+
+.nav-pill a[aria-current="page"] {
   color: var(--accent);
 }
 
@@ -194,18 +199,6 @@ video {
   max-width: 26rem;
 }
 
-.hero__featured {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.hero__featured img {
-  height: 32px;
-  width: auto;
-}
-
 .hero__avatars {
   position: absolute;
   right: 0;
@@ -224,12 +217,29 @@ video {
 }
 
 .hero__avatar {
+  display: block;
   width: 56px;
   height: 57px;
   border-radius: 12px;
   overflow: hidden;
   border: 2px solid var(--gallery);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+  .hero__avatar:hover {
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.42);
+  }
+}
+
+.hero__avatar:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .hero__avatar:nth-child(1) {
@@ -353,6 +363,90 @@ video {
   margin: 0.75rem 0 0;
   color: var(--text-muted);
   font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+/* ----- Achievements (SIH) ----- */
+.achievements {
+  padding: 0 var(--gutter) 4rem;
+}
+
+.achievements__grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .achievements__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievements__card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.achievements__frame {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(161, 161, 161, 0.28);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+  background: rgba(20, 20, 22, 0.6);
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 768px) {
+  .achievements__frame {
+    aspect-ratio: 3 / 4;
+    max-height: min(72vh, 520px);
+  }
+}
+
+.achievements__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.achievements__body {
+  text-align: left;
+  padding: 0 0.15rem;
+}
+
+.achievements__kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.achievements__name {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.achievements__caption {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
   letter-spacing: -0.01em;
 }
 
@@ -1092,6 +1186,29 @@ video {
 .footer__btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.footer__contact-line {
+  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--footer-text);
+}
+
+.footer__contact-line a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer__contact-line a:hover {
+  opacity: 0.92;
+}
+
+.footer__contact-sep {
+  margin: 0 0.45rem;
+  opacity: 0.65;
+  user-select: none;
 }
 
 .footer__bar {

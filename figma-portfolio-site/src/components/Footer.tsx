@@ -1,6 +1,7 @@
 const RESUME =
-  "https://drive.google.com/file/d/1Nv1QZcsyUaFVUVMmNG-yBwTQ-paiQSsq/view";
-const MAIL = "mailto:bhaktidangri@gmail.com";
+  "https://drive.google.com/file/d/1TJh1e67I5Tt9j9hlMxlzn_arK5mftd-u/view?usp=sharing";
+const MAIL = "mailto:dangribhaktii@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/bhakti-dangri-40a1a7250/";
 
 export function Footer() {
   return (
@@ -14,6 +15,15 @@ export function Footer() {
         <a className="footer__btn" href={MAIL}>
           Let&apos;s Talk
         </a>
+        <p className="footer__contact-line">
+          <a href={MAIL}>dangribhaktii@gmail.com</a>
+          <span className="footer__contact-sep" aria-hidden>
+            ·
+          </span>
+          <a href={LINKEDIN} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </p>
       </div>
       <div className="footer__bar">
         <p className="footer__copy">
@@ -24,11 +34,7 @@ export function Footer() {
           <a href={RESUME} target="_blank" rel="noreferrer">
             Resume
           </a>
-          <a
-            href="https://www.linkedin.com/in/bhaktidangri/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={LINKEDIN} target="_blank" rel="noreferrer">
             LinkedIn
           </a>
         </div>

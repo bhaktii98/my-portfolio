@@ -5,14 +5,9 @@
  */
 
 export const assets = {
-  featuredLogo:
-    "https://www.figma.com/api/mcp/asset/8cf2a69f-2a97-4d96-bc14-44b2202b3625",
-  avatar1:
-    "https://www.figma.com/api/mcp/asset/09fa7eba-448a-4394-891c-2b3cf0fbfb66",
-  avatar2:
-    "https://www.figma.com/api/mcp/asset/6d2bc4d4-c3ff-4fec-8a1d-ee21f48070cf",
-  avatar3:
-    "https://www.figma.com/api/mcp/asset/61450cff-fd5f-4c9b-8ef5-78b883303a10",
+  avatar1: "/about/polaroid-1.jpeg",
+  avatar2: "/about/bharatanatyam-performance.jpeg",
+  avatar3: "/about/polaroid-3.jpeg",
   heroIllustration:
     "https://www.figma.com/api/mcp/asset/3a36e58a-a4cd-4575-856f-2c4909e4eee3",
   heroGlow: "https://www.figma.com/api/mcp/asset/7abd4f7a-7e52-4c28-a50d-c48cde2c919d",
