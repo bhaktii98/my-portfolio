@@ -4,12 +4,13 @@
  * Source file: https://www.figma.com/design/5ocVsmRlUXEabgaFEquK67/...
  */
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const assets = {
-  avatar1: "/about/polaroid-1.jpeg",
-  avatar2: "/about/bharatanatyam-performance.jpeg",
-  avatar3: "/about/polaroid-3.jpeg",
-  heroIllustration:
-    "https://www.figma.com/api/mcp/asset/3a36e58a-a4cd-4575-856f-2c4909e4eee3",
+  avatar1: `${BASE_URL}about/polaroid-1.jpeg`,
+  avatar2: `${BASE_URL}about/bharatanatyam-performance.jpeg`,
+  avatar3: `${BASE_URL}about/polaroid-3.jpeg`,
+  heroIllustration: `${BASE_URL}hero/image.png`,
   heroGlow: "https://www.figma.com/api/mcp/asset/7abd4f7a-7e52-4c28-a50d-c48cde2c919d",
   project1a:
     "https://www.figma.com/api/mcp/asset/79b099c1-4c8b-46e7-a89c-4ac18f7be03a",
