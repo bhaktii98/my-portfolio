@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 
 const JALSANCHAY_PDF =
-  "/jalsanchay/" + encodeURIComponent("Jal sanchay (1).pdf");
+  `${import.meta.env.BASE_URL}jalsanchay/` +
+  encodeURIComponent("Jal sanchay (1).pdf");
 
 /** Legacy URL `/projects/jalsanchay` → static PDF */
 export function JalSanchayPdfRedirect() {

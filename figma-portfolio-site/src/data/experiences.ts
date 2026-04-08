@@ -2,8 +2,9 @@
  * Left “card” visuals for Work / Experience: shared banner + image (hover swap).
  * Files live in public/work/
  */
-export const WORK_CARD_IMAGE_A = "/work/banner.png";
-export const WORK_CARD_IMAGE_B = "/work/image.png";
+const BASE_URL = import.meta.env.BASE_URL;
+export const WORK_CARD_IMAGE_A = `${BASE_URL}work/banner.png`;
+export const WORK_CARD_IMAGE_B = `${BASE_URL}work/image.png`;
 
 export type Experience = {
   id: string;

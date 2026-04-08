@@ -3,10 +3,11 @@ import { BharatYatraProjectCard } from "../components/BharatYatraProject";
 import { JalSanchayProjectCard } from "../components/JalSanchayProject";
 import { Footer } from "../components/Footer";
 
-export const ANANTARA_PDF_HREF = "/anantara/Anantara.pdf";
-export const BHARATYATRA_PDF_HREF = "/bharatyatra/BharatYatra.pdf";
+const BASE_URL = import.meta.env.BASE_URL;
+export const ANANTARA_PDF_HREF = `${BASE_URL}anantara/Anantara.pdf`;
+export const BHARATYATRA_PDF_HREF = `${BASE_URL}bharatyatra/BharatYatra.pdf`;
 export const JALSANCHAY_PDF_HREF =
-  "/jalsanchay/" + encodeURIComponent("Jal sanchay (1).pdf");
+  `${BASE_URL}jalsanchay/` + encodeURIComponent("Jal sanchay (1).pdf");
 
 export function ProjectsPage() {
   return (

@@ -8,17 +8,26 @@ const RESUME =
 const CONTACT_EMAIL = "dangribhaktii@gmail.com";
 const LINKEDIN_HREF =
   "https://www.linkedin.com/in/bhakti-dangri-40a1a7250/";
+const BASE_URL = import.meta.env.BASE_URL;
 
 const DAILY_DRIVER_HUB = {
-  src: "/icons/vscode.png",
+  src: `${BASE_URL}icons/vscode.png`,
   label: "Visual Studio Code",
 } as const;
 
 const DAILY_DRIVER_ORBIT = [
-  { classSuffix: "a" as const, src: "/icons/clickup.png", label: "ClickUp" },
-  { classSuffix: "b" as const, src: "/icons/docker.png", label: "Docker" },
-  { classSuffix: "c" as const, src: "/icons/figma.png", label: "Figma" },
-  { classSuffix: "d" as const, src: "/icons/jira.png", label: "Jira" },
+  {
+    classSuffix: "a" as const,
+    src: `${BASE_URL}icons/clickup.png`,
+    label: "ClickUp",
+  },
+  {
+    classSuffix: "b" as const,
+    src: `${BASE_URL}icons/docker.png`,
+    label: "Docker",
+  },
+  { classSuffix: "c" as const, src: `${BASE_URL}icons/figma.png`, label: "Figma" },
+  { classSuffix: "d" as const, src: `${BASE_URL}icons/jira.png`, label: "Jira" },
 ] as const;
 
 const SKILLS = [

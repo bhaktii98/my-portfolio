@@ -1,7 +1,8 @@
-const GISUL_HERO = "/gisul/gisul.png";
-const GISUL_PAYMENT = "/gisul/payment_course.png";
-const AAPTOR_LOGIN = "/gisul/aaptor.png";
-const AAPTOR_FEATURES = "/gisul/competencies.png";
+const BASE_URL = import.meta.env.BASE_URL;
+const GISUL_HERO = `${BASE_URL}gisul/gisul.png`;
+const GISUL_PAYMENT = `${BASE_URL}gisul/payment_course.png`;
+const AAPTOR_LOGIN = `${BASE_URL}gisul/aaptor.png`;
+const AAPTOR_FEATURES = `${BASE_URL}gisul/competencies.png`;
 
 export function FeaturedProjects() {
   return (

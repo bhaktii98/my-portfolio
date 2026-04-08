@@ -1,6 +1,7 @@
+const BASE_URL = import.meta.env.BASE_URL;
 const SIH_2024_SRC =
-  "/achievements/" + encodeURIComponent("SIH-2024 Winner.png");
-const SIH_2025_SRC = "/achievements/SIH-2025.png";
+  `${BASE_URL}achievements/` + encodeURIComponent("SIH-2024 Winner.png");
+const SIH_2025_SRC = `${BASE_URL}achievements/SIH-2025.png`;
 
 const ITEMS = [
   {

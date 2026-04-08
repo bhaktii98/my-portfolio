@@ -1,9 +1,9 @@
 import { usePortraitVideoFullscreen } from "../hooks/usePortraitVideoFullscreen";
 
-const ANANTARA_VIDEO_WEB = `/anantara/${encodeURIComponent(
+const ANANTARA_VIDEO_WEB = `${import.meta.env.BASE_URL}anantara/${encodeURIComponent(
   "ANANTAARAA _ Web Platform and 1 more page - Personal - Microsoft_ Edge 2025-12-28 23-16-31.mp4",
 )}`;
-const ANANTARA_VIDEO_MOBILE = `/anantara/${encodeURIComponent(
+const ANANTARA_VIDEO_MOBILE = `${import.meta.env.BASE_URL}anantara/${encodeURIComponent(
   "Mobile_ANANTAARA (1).mp4",
 )}`;
 

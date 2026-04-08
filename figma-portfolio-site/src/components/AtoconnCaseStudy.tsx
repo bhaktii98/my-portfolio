@@ -11,19 +11,19 @@ const WOWCARE_SHOTS: CaseStudyShot[] = [
   {
     label: "Staff dashboard",
     url: "WowCare · phone",
-    src: "/atoconn/wowcare.png",
+    src: `${import.meta.env.BASE_URL}atoconn/wowcare.png`,
     alt: "WowCare staff dashboard with My Day, sign-in, classrooms and enrollment stats",
   },
   {
     label: "Students & classroom",
     url: "WowCare · mobile UI",
-    src: "/atoconn/wowcare2.png",
+    src: `${import.meta.env.BASE_URL}atoconn/wowcare2.png`,
     alt: "WowCare students list, classroom tabs, attendance and messaging actions",
   },
   {
     label: "Staff · tablet",
     url: "WowCare · tablet",
-    src: "/atoconn/wowcaretab.png",
+    src: `${import.meta.env.BASE_URL}atoconn/wowcaretab.png`,
     alt: "WowCare tablet staff view with roster, search, and classroom navigation",
   },
 ];
@@ -32,19 +32,19 @@ const WOWINV_SHOTS: CaseStudyShot[] = [
   {
     label: "Purchases & overview",
     url: "WowInventory · Flutter",
-    src: "/atoconn/wowinventory.png",
+    src: `${import.meta.env.BASE_URL}atoconn/wowinventory.png`,
     alt: "WowInventory purchase flow with ordered tab, metrics, and bottom navigation",
   },
   {
     label: "Requests & analytics",
     url: "WowInventory · requests",
-    src: "/atoconn/inventory.png",
+    src: `${import.meta.env.BASE_URL}atoconn/inventory.png`,
     alt: "WowInventory requests screen with total count, status bar, and search",
   },
   {
     label: "Purchase detail",
     url: "WowInventory · orders",
-    src: "/atoconn/inventory-2.png",
+    src: `${import.meta.env.BASE_URL}atoconn/inventory-2.png`,
     alt: "WowInventory purchase list with vendors and product filters",
   },
 ];

@@ -2,7 +2,8 @@ import { usePortraitVideoFullscreen } from "../hooks/usePortraitVideoFullscreen"
 
 /** Public URLs — filenames contain spaces; encode for reliable loading */
 export const JALSANCHAY_VIDEO =
-  "/jalsanchay/" + encodeURIComponent("Jal-Sanchay for farmers.mp4");
+  `${import.meta.env.BASE_URL}jalsanchay/` +
+  encodeURIComponent("Jal-Sanchay for farmers.mp4");
 
 const KEY_FEATURES = [
   "Profiles & languages (Hindi/English), Firebase auth, React admin dashboard",

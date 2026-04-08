@@ -1,6 +1,7 @@
 import { usePortraitVideoFullscreen } from "../hooks/usePortraitVideoFullscreen";
 
-export const BHARATYATRA_VIDEO = "/bharatyatra/BharatYatra.mp4";
+export const BHARATYATRA_VIDEO =
+  `${import.meta.env.BASE_URL}bharatyatra/BharatYatra.mp4`;
 
 const KEY_FEATURES = [
   "Personalized itineraries via recommendation AI",
