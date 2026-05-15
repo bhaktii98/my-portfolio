@@ -128,8 +128,9 @@ export function AboutPage() {
           genuinely useful. I&apos;ve owned products end to end: writing PRDs,
           designing in Figma, and building what ships frontend and backend across
           B2B and B2C SaaS. I&apos;m at{" "}
-          <span className="vf-accent-inline">GISUL</span> in Bengaluru now;
-          before that I led full-stack delivery and handled product lifecycle at{" "}
+          <span className="vf-accent-inline">NuLook</span> now, designing and
+          building a mobile app from scratch; before that I led full-stack
+          delivery and handled product lifecycle at{" "}
           <span className="vf-accent-inline">Atoconn</span> in Mumbai.
         </p>
         <p>

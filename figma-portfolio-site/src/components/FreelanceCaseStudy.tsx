@@ -7,16 +7,16 @@ import {
 } from "./caseStudy/CaseStudyBlocks";
 
 const BASE_URL = import.meta.env.BASE_URL;
-const GISUL_LANDING = `${BASE_URL}gisul/gisul.png`;
-const GISUL_PAYMENT = `${BASE_URL}gisul/payment_course.png`;
-const AAPTOR_LOGIN = `${BASE_URL}gisul/aaptor.png`;
-const AAPTOR_FEATURES = `${BASE_URL}gisul/competencies.png`;
+const MARKETPLACE_LANDING = `${BASE_URL}freelance/learning-marketplace.png`;
+const MARKETPLACE_PAYMENT = `${BASE_URL}freelance/payment_course.png`;
+const AAPTOR_LOGIN = `${BASE_URL}freelance/aaptor.png`;
+const AAPTOR_FEATURES = `${BASE_URL}freelance/competencies.png`;
 
-const GISUL_ROWS: CaseStudyRow[] = [
+const MARKETPLACE_ROWS: CaseStudyRow[] = [
   {
     label: "Objective",
     content:
-      "Give GISUL a real learner journey: marketing entry, course context, and in-app payment so enrollments are not stuck on a static site.",
+      "Give the learning marketplace a real learner journey: marketing entry, course context, and in-app payment so enrollments are not stuck on a static site.",
   },
   {
     label: "What I built",
@@ -44,21 +44,21 @@ const GISUL_ROWS: CaseStudyRow[] = [
   },
 ];
 
-const GISUL_TAPED: CaseStudyTaped[] = [
+const MARKETPLACE_TAPED: CaseStudyTaped[] = [
   {
     title: "Frontend",
     body: "Next.js UI for the pages users hit before and during enrollment.",
-    foot: "GISUL",
+    foot: "Marketplace",
   },
   {
     title: "Backend",
     body: "FastAPI services behind course and checkout-related APIs.",
-    foot: "GISUL",
+    foot: "Marketplace",
   },
   {
     title: "Payments",
     body: "Razorpay integration I own from app to live transactions.",
-    foot: "GISUL",
+    foot: "Marketplace",
   },
 ];
 
@@ -120,7 +120,7 @@ type Props = {
   exp: Experience;
 };
 
-export function GisulCaseStudy({ exp }: Props) {
+export function FreelanceCaseStudy({ exp }: Props) {
   return (
     <article className="case-study">
       <div className="case-study__inner">
@@ -133,30 +133,31 @@ export function GisulCaseStudy({ exp }: Props) {
           <p className="case-study__meta">
             {exp.period} · {exp.company}
           </p>
-          <h1 className="case-study__page-title">Shipped at GISUL</h1>
+          <h1 className="case-study__page-title">Freelance product work</h1>
           <p className="case-study__lede">
-            I work on <strong>GISUL</strong> (learning) and{" "}
-            <strong>AAptor</strong> (assessments). Below: what I was aiming for,
-            what I built, and the impact.
+            Two projects I delivered as a freelancer: a{" "}
+            <strong>learning marketplace</strong> and <strong>AAptor</strong>{" "}
+            (assessments). Below: what I was aiming for, what I built, and the
+            impact.
           </p>
         </header>
 
         <CaseStudyProject
           num="1."
-          title="GISUL"
+          title="Learning marketplace"
           subtitle="Learning product: Next.js + FastAPI + Razorpay."
-          rows={GISUL_ROWS}
-          primaryImg={GISUL_LANDING}
-          primaryAlt="GISUL homepage: purple logo, Careers and product links, LEARNING PLATFORM badge, hero Grow your skills with GISUL, Get started free and Sign in"
+          rows={MARKETPLACE_ROWS}
+          primaryImg={MARKETPLACE_LANDING}
+          primaryAlt="Learning marketplace homepage: logo, Careers and product links, LEARNING PLATFORM badge, hero Grow your skills, Get started free and Sign in"
           primaryLabel="Marketing site"
-          primaryUrl="gisul.com"
-          secondaryImg={GISUL_PAYMENT}
-          secondaryAlt="GISUL course view with Razorpay modal: Payment Options, UPI QR, Verify and Pay, Secured by Razorpay, Test Mode ribbon"
+          primaryUrl="marketing site"
+          secondaryImg={MARKETPLACE_PAYMENT}
+          secondaryAlt="Course view with Razorpay modal: Payment Options, UPI QR, Verify and Pay, Secured by Razorpay, Test Mode ribbon"
           secondaryLabel="Checkout & payments"
           secondaryUrl="checkout · Razorpay"
-          taped={GISUL_TAPED}
-          tapedHeadingId="gisul-dh"
-          tapedTitle="GISUL · highlights"
+          taped={MARKETPLACE_TAPED}
+          tapedHeadingId="marketplace-dh"
+          tapedTitle="Learning marketplace · highlights"
           stack={[
             "Next.js",
             "React",

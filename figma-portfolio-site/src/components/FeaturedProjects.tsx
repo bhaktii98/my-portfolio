@@ -1,8 +1,8 @@
 const BASE_URL = import.meta.env.BASE_URL;
-const GISUL_HERO = `${BASE_URL}gisul/gisul.png`;
-const GISUL_PAYMENT = `${BASE_URL}gisul/payment_course.png`;
-const AAPTOR_LOGIN = `${BASE_URL}gisul/aaptor.png`;
-const AAPTOR_FEATURES = `${BASE_URL}gisul/competencies.png`;
+const MARKETPLACE_HERO = `${BASE_URL}freelance/learning-marketplace.png`;
+const MARKETPLACE_PAYMENT = `${BASE_URL}freelance/payment_course.png`;
+const AAPTOR_LOGIN = `${BASE_URL}freelance/aaptor.png`;
+const AAPTOR_FEATURES = `${BASE_URL}freelance/competencies.png`;
 
 export function FeaturedProjects() {
   return (
@@ -22,16 +22,16 @@ export function FeaturedProjects() {
           <div className="fp-project__meta">
             <span className="fp-project__badge">Learning platform</span>
             <h3 className="fp-project__title">
-              <span className="fp-project__name">GISUL</span>
+              <span className="fp-project__name">Learning marketplace</span>
               <span className="fp-project__tagline">
                 Udemy-style courses, checkout, and learner UX
               </span>
             </h3>
             <p className="fp-project__lead">
-              GISUL is a full learning experience: course discovery, structured
-              content, and enrollment flows inspired by marketplaces like Udemy. I
-              shaped the marketing and product surfaces — from hero and navigation
-              to course pages — so the product feels familiar, trustworthy, and
+              A full learning experience: course discovery, structured content,
+              and enrollment flows inspired by marketplaces like Udemy. I shaped
+              the marketing and product surfaces — from hero and navigation to
+              course pages — so the product feels familiar, trustworthy, and
               fast to use.
             </p>
             <ul className="fp-project__list">
@@ -48,11 +48,14 @@ export function FeaturedProjects() {
               </li>
             </ul>
           </div>
-          <div className="fp-project__shots" aria-label="GISUL screenshots">
+          <div
+            className="fp-project__shots"
+            aria-label="Learning marketplace screenshots"
+          >
             <figure className="fp-shot">
               <img
-                src={GISUL_HERO}
-                alt="GISUL learning platform landing page with hero, navigation, and call to action"
+                src={MARKETPLACE_HERO}
+                alt="Learning marketplace landing page with hero, navigation, and call to action"
                 loading="lazy"
                 width={1200}
                 height={800}
@@ -61,8 +64,8 @@ export function FeaturedProjects() {
             </figure>
             <figure className="fp-shot">
               <img
-                src={GISUL_PAYMENT}
-                alt="GISUL course page with Razorpay payment modal showing UPI and payment options"
+                src={MARKETPLACE_PAYMENT}
+                alt="Learning marketplace course page with Razorpay payment modal showing UPI and payment options"
                 loading="lazy"
                 width={1200}
                 height={800}

@@ -52,7 +52,7 @@ function AnantaraPreviewVideos() {
   );
 }
 
-/** List card for /projects — same layout as Featured projects (GISUL / AAptor). */
+/** List card for /projects — same layout as the Featured projects cards. */
 export function AnantaraProjectCard() {
   return (
     <article className="fp-project fp-project--anantara" id="anantara">

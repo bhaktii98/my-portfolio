@@ -34,19 +34,42 @@ const cardVisual = {
 export const experiences: Experience[] = [
   {
     id: "e1",
-    slug: "gisul",
-    heading: "Full Stack Developer",
-    company: "GISUL, Bengaluru",
-    period: "Jan 2026 – Present",
+    slug: "nulook",
+    heading: "Product Designer & Flutter Developer",
+    company: "NuLook",
+    period: "May 2026 – Present",
     overview:
-      "GISUL learning marketplace (Udemy-style flows + Razorpay) and AAptor enterprise assessments — Next.js frontends, FastAPI / Node / Express services, LLM & GenAI, and payment integrations.",
+      "Building NuLook from scratch — a mobile makeover app where people book online salons and get personalized packages based on their mood. Designing the full experience in Figma and shipping it in Flutter.",
     ...cardVisual,
     offset: "left",
     detail: {
       intro:
-        "Two shipped surfaces: the GISUL learner product (marketing → course → pay) and AAptor (high-volume evaluation, proctoring story, multi-modal assessments).",
+        "NuLook is a first-of-its-kind personalization app for makeovers: users book online salons and get packages tailored to how they feel. I own the product design and the build — from Figma to a from-scratch Flutter app.",
       bullets: [
-        "GISUL: landing, nav, course pages, and Razorpay checkout with UPI-first rails and staging-safe test mode.",
+        "Designing the end-to-end experience in Figma — flows, UI, and the mood-first interaction model that anchors the product.",
+        "Building the mobile app from scratch in Flutter, translating designs directly into shipped screens.",
+        "Shaped the MVP around mood: personalized salon packages and recommendations driven by how the user feels.",
+        "Online salon booking — discovery, scheduling, and a booking flow built for a smooth makeover experience.",
+      ],
+      stack: ["Flutter", "Dart"],
+      tools: ["Figma"],
+    },
+  },
+  {
+    id: "e2",
+    slug: "freelance",
+    heading: "Full Stack Developer",
+    company: "Freelance",
+    period: "Jan 2026 – Present",
+    overview:
+      "Freelance product work for two clients: a learning marketplace (Udemy-style flows + Razorpay) and AAptor enterprise assessments — Next.js frontends, FastAPI / Node / Express services, LLM & GenAI, and payment integrations.",
+    ...cardVisual,
+    offset: "right",
+    detail: {
+      intro:
+        "Two shipped surfaces delivered as freelance projects: a learning marketplace product (marketing → course → pay) and AAptor (high-volume evaluation, proctoring story, multi-modal assessments).",
+      bullets: [
+        "Learning marketplace: landing, nav, course pages, and Razorpay checkout with UPI-first rails and staging-safe test mode.",
         "AAptor: auth and compliance-forward entry, workflow cards, and an eight-tile capability grid (DSA, cloud, DevOps, data, design, GenAI, and more).",
         "Backend architecture with FastAPI, Node.js, Express.js, microservices, LLM/GenAI scoring, and optimized APIs.",
       ],
@@ -64,15 +87,15 @@ export const experiences: Experience[] = [
     },
   },
   {
-    id: "e2",
+    id: "e3",
     slug: "atoconn",
     heading: "Software Developer (Fullstack)",
     company: "Atoconn System Labs Pvt. Ltd, Mumbai",
-    period: "Apr 2025 – Dec 2025",
+    period: "Apr 2025 – Apr 2026",
     overview:
       "Lead Developer with US clients: scalable web & mobile; UX research → Figma → PRD → deploy; WowCare +35% engagement, 100+ users; WowInventory + WowCare; payments, APIs, Play & App Store.",
     ...cardVisual,
-    offset: "right",
+    offset: "left",
     detail: {
       intro:
         "Lead Developer collaborating with US-based clients on scalable web and mobile products—full lifecycle ownership from research and design through production releases.",
@@ -88,7 +111,7 @@ export const experiences: Experience[] = [
     },
   },
   {
-    id: "e3",
+    id: "e4",
     slug: "hcl",
     heading: "Full Stack Developer Intern",
     company: "HCL Technologies",
@@ -96,7 +119,7 @@ export const experiences: Experience[] = [
     overview:
       "Built a fleet management web application from scratch with React and Next.js on the client and Django + Python APIs on the server.",
     ...cardVisual,
-    offset: "left",
+    offset: "right",
     detail: {
       intro:
         "Greenfield intern project: full-stack web app for fleet operations and visibility.",
@@ -112,7 +135,7 @@ export const experiences: Experience[] = [
     },
   },
   {
-    id: "e4",
+    id: "e5",
     slug: "orange-essence",
     heading: "Mobile App Intern",
     company: "Orrange Essence Technologies",
@@ -120,7 +143,7 @@ export const experiences: Experience[] = [
     overview:
       "Cross-platform mobile apps with Flutter and React Native — shipped features for 50+ active users with design handoff in Figma.",
     ...cardVisual,
-    offset: "right",
+    offset: "left",
     detail: {
       intro:
         "Mobile-focused internship building production-ready screens and flows.",
@@ -148,7 +171,9 @@ function formatAboutPeriod(period: string): string {
 }
 
 function aboutWorkType(slug: string): string {
-  return slug === "hcl" || slug === "orange-essence" ? "Internship" : "Full time";
+  if (slug === "hcl" || slug === "orange-essence") return "Internship";
+  if (slug === "freelance") return "Freelance";
+  return "Full time";
 }
 
 function companyInitials(company: string): string {

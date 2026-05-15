@@ -1256,7 +1256,7 @@ video {
   text-decoration: underline;
 }
 
-/* ----- Featured projects (GISUL / AAptor) ----- */
+/* ----- Featured projects ----- */
 .fp-showcase {
   padding: 0 var(--gutter) 5rem;
   max-width: var(--maxw);
@@ -1920,7 +1920,7 @@ a.fp-project-card:focus-visible .fp-project-card__hint {
   text-underline-offset: 3px;
 }
 
-/* ----- GISUL case study (matches site dark theme) ----- */
+/* ----- Freelance case study (matches site dark theme) ----- */
 .case-study {
   --cs-ink: #eaeaf0;
   --cs-muted: #a8a8b8;
