@@ -2065,6 +2065,22 @@ a.fp-project-card:focus-visible .fp-project-card__hint {
   font-weight: 600;
 }
 
+.case-study__intro-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.15rem 0 0;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--cs-ink);
+  background: var(--cs-accent-soft);
+  border: 1px solid rgba(165, 135, 255, 0.28);
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
 .case-study__links {
   display: flex;
   flex-wrap: wrap;

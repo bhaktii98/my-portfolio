@@ -4,7 +4,7 @@ import { figmaAbout as A } from "../figmaAboutPageAssets";
 import "../styles/aboutFigmaPage.css";
 
 const RESUME =
-  "https://drive.google.com/file/d/1TJh1e67I5Tt9j9hlMxlzn_arK5mftd-u/view?usp=sharing";
+  "https://drive.google.com/file/d/1cJ_vu4LZ1OqMLjZEm4Sj3rvOd0qb2Dx-/view?usp=sharing";
 const CONTACT_EMAIL = "dangribhaktii@gmail.com";
 const LINKEDIN_HREF =
   "https://www.linkedin.com/in/bhakti-dangri-40a1a7250/";

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 const RESUME =
-  "https://drive.google.com/file/d/1TJh1e67I5Tt9j9hlMxlzn_arK5mftd-u/view?usp=sharing";
+  "https://drive.google.com/file/d/1cJ_vu4LZ1OqMLjZEm4Sj3rvOd0qb2Dx-/view?usp=sharing";
 
 export function Navigation() {
   const { pathname } = useLocation();

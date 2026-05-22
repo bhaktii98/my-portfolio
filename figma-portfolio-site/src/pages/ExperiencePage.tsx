@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { AtoconnCaseStudy } from "../components/AtoconnCaseStudy";
 import { FreelanceCaseStudy } from "../components/FreelanceCaseStudy";
 import { InternshipCaseStudy } from "../components/InternshipCaseStudy";
+import { NulookCaseStudy } from "../components/NulookCaseStudy";
 import { getExperienceBySlug } from "../data/experiences";
 
 export function ExperiencePage() {
@@ -10,6 +11,10 @@ export function ExperiencePage() {
 
   if (!exp) {
     return <Navigate to="/" replace />;
+  }
+
+  if (exp.slug === "nulook") {
+    return <NulookCaseStudy exp={exp} />;
   }
 
   if (exp.slug === "freelance") {

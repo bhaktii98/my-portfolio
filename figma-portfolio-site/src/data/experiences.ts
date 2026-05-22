@@ -35,23 +35,23 @@ export const experiences: Experience[] = [
   {
     id: "e1",
     slug: "nulook",
-    heading: "Product Designer & Flutter Developer",
+    heading: "Product Developer",
     company: "NuLook",
     period: "May 2026 – Present",
     overview:
-      "Building NuLook from scratch — a mobile makeover app where people book online salons and get personalized packages based on their mood. Designing the full experience in Figma and shipping it in Flutter.",
+      "Leading end-to-end development of NuLook — a luxury mood-based salon booking app with persona-driven personalization. Owning the Flutter app (MVVM), FastAPI backend, and the full UX research-to-launch journey. Launching this month.",
     ...cardVisual,
     offset: "left",
     detail: {
       intro:
-        "NuLook is a first-of-its-kind personalization app for makeovers: users book online salons and get packages tailored to how they feel. I own the product design and the build — from Figma to a from-scratch Flutter app.",
+        "NuLook is a luxury, mood-based booking app where people book salons and get packages tailored to their persona and how they feel. I lead the build end to end — from product and UX research and Figma wireframes to a production Flutter app backed by FastAPI.",
       bullets: [
-        "Designing the end-to-end experience in Figma — flows, UI, and the mood-first interaction model that anchors the product.",
-        "Building the mobile app from scratch in Flutter, translating designs directly into shipped screens.",
-        "Shaped the MVP around mood: personalized salon packages and recommendations driven by how the user feels.",
-        "Online salon booking — discovery, scheduling, and a booking flow built for a smooth makeover experience.",
+        "Leading end-to-end development of a luxury mood-based booking app with persona-driven personalization.",
+        "Building the complete Flutter mobile application using MVVM architecture, from UI/UX wireframes to production deployment.",
+        "Contributing to backend systems with FastAPI for scalable APIs, authentication, and dynamic personalization.",
+        "Conducted product and UX research to craft a premium luxury app experience, including dynamic festive-based theming.",
       ],
-      stack: ["Flutter", "Dart"],
+      stack: ["Flutter", "Firebase", "FastAPI", "MVVM"],
       tools: ["Figma"],
     },
   },
